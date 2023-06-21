@@ -6,7 +6,7 @@ class CifradoCesar:
         self.desplazamiento = desplazamiento
         self.alfabeto = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
         self.mod = len(self.alfabeto)
-
+    # se remueven las tildes, haciendo uso de un diccionario
     def remove_tildes(self, texto):
         tildes_dict = {
             'á': 'a', 
@@ -25,28 +25,45 @@ class CifradoCesar:
         return texto
 
     def clean_text(self, texto):
+        # se remueven las tildes
         texto = self.remove_tildes(texto)
+        # se remueven los signos de puntuacion y espacios en blanco
         texto = re.sub(r'[\s\W]+', '', texto)
         return texto
 
     def cifrar(self, texto_plano):
+        # se limpia el texto plano
         texto_plano = self.clean_text(texto_plano)
+        # se declara variable texto_cifrado vacia
         texto_cifrado = ''
+        # se recorre el texto plano en mayusculas
         for char in texto_plano.upper():
+            # si el caracter esta en el alfabeto
             if char in self.alfabeto:
+                # se obtiene el indice del caracter en el alfabeto al cual se le suma el desplazamiento y se obtiene el modulo
                 index = (self.alfabeto.index(char) + self.desplazamiento) % self.mod
+                # se agrega el caracter cifrado al texto cifrado
                 texto_cifrado += self.alfabeto[index]
+            # si no esta en el alfabeto
             else:
+                # se agrega el caracter al texto cifrado
                 texto_cifrado += char
         return texto_cifrado
 
     def descifrar(self, texto_cifrado):
+        # se declara variable texto_descifrado vacia
         texto_descifrado = ''
+        # se recorre el texto cifrado en mayusculas
         for char in texto_cifrado.upper():
+            # si el caracter esta en el alfabeto
             if char in self.alfabeto:
+                # se obtiene el indice del caracter en el alfabeto al cual se le resta el desplazamiento y se obtiene el modulo
                 index = (self.alfabeto.index(char) - self.desplazamiento) % self.mod
+                # se agrega el caracter descifrado al texto descifrado
                 texto_descifrado += self.alfabeto[index]
+            # si no esta en el alfabeto 
             else:
+                # se agrega el caracter al texto descifrado
                 texto_descifrado += char
         return texto_descifrado
 
