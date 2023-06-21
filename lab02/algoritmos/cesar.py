@@ -11,8 +11,7 @@ def cifrar_cesar(texto_plano, desplazamiento, alfabeto=ALPHABET):
         # si el caracter esta en el alfabeto
         if char in alfabeto:
             # se obtiene el indice del caracter en el alfabeto al cual se le suma el desplazamiento y se obtiene el modulo
-            index = (alfabeto.index(char) +
-                     desplazamiento) % len(alfabeto)
+            index = (alfabeto.index(char) + desplazamiento) % len(alfabeto)
             # se agrega el caracter cifrado al texto cifrado
             texto_cifrado += alfabeto[index]
             # si no esta en el alfabeto
@@ -32,8 +31,7 @@ def descifrar_cesar(texto_cifrado, desplazamiento, alfabeto=ALPHABET):
         # si el caracter esta en el alfabeto
         if char in alfabeto:
             # se obtiene el indice del caracter en el alfabeto al cual se le resta el desplazamiento y se obtiene el modulo
-            index = (alfabeto.index(char) -
-                     desplazamiento) % len(alfabeto)
+            index = (alfabeto.index(char) - desplazamiento) % len(alfabeto)
             # se agrega el caracter descifrado al texto descifrado
             texto_descifrado += alfabeto[index]
             # si no esta en el alfabeto:

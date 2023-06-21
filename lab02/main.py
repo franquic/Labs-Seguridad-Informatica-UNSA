@@ -15,7 +15,7 @@ def main():
     if opcion == '1':
         algoritmo = input('Cesar (1) | Vignere (2) | Autoclave (3)? ')
         if algoritmo == '1':
-            desplazamiento = input('Desplazamiento: ')
+            desplazamiento = int(input('Desplazamiento: '))
             texto_cifrado = cifrar_cesar(texto_plano, desplazamiento)
             with open(path_texto_cifrado, 'w') as f:
                 f.write(texto_cifrado)
@@ -40,7 +40,7 @@ def main():
     elif opcion == '2':
         algoritmo = input('Cesar (1) | Vignere (2) | Autoclave (3)? ')
         if algoritmo == '1':
-            desplazamiento = input('Desplazamiento: ')
+            desplazamiento = int(input('Desplazamiento: '))
             with open(path_texto_cifrado, 'r') as f:
                 texto_cifrado = f.read()
             texto_descifrado = descifrar_cesar(texto_cifrado, desplazamiento)
