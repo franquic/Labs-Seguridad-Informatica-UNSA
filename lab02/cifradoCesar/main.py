@@ -79,7 +79,9 @@ class CifradoCesar:
         return CifradoCesar(desplazamiento).cifrar(texto_plano)
 
 if __name__ == "__main__":
+    # se crea un objeto de tipo ArgumentParser para poder obtener los argumentos de la linea de comandos
     parser = argparse.ArgumentParser(description='Cifrado Cesar')
+    # se agregan los argumentos que se van a utilizar, en este caso, file, text y shift; se incluye una ayuda para cada argumento
     parser.add_argument('-f', '--file', help='Ruta al archivo que contiene el texto plano')
     parser.add_argument('-t', '--text', help='El texto plano a ser cifrado')
     parser.add_argument('-s', '--shift', type=int, help='El desplazamiento para el Cifrado Cesar')
