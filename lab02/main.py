@@ -74,9 +74,11 @@ def main():
         algoritmo = input('Opción: ')
         if algoritmo in opciones_algoritmo.keys():
             texto_cifrado = leer_archivo('./files/texto_cifrado.txt')
-            texto_descifrado = descifrar_opcion(algoritmo, texto_cifrado, clave)
+            texto_descifrado = descifrar_opcion(
+                algoritmo, texto_cifrado, clave)
             escribir_archivo('./files/texto_descifrado.txt', texto_descifrado)
-            print(f'Descifrado {opciones_algoritmo[algoritmo]}: {texto_descifrado}')
+            print(
+                f'Descifrado {opciones_algoritmo[algoritmo]}: {texto_descifrado}')
         else:
             print('Opción inválida')
 
