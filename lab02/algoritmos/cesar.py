@@ -38,4 +38,4 @@ def descifrar_cesar(texto_cifrado, desplazamiento, alfabeto=ALPHABET):
         else:
             # se agrega el caracter al texto descifrado
             texto_descifrado += char
-        return texto_descifrado
+    return texto_descifrado
