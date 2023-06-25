@@ -1,8 +1,18 @@
 import re
 
-# Alfabeto espanol
+# Alfabeto espanol y ASCII
 ALPHABET = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'
+ALPHABET191ASCII = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
+# Función para seleccionar el alfabeto
+def select_alphabet(alphabet_choice):
+    if alphabet_choice == "27":
+        return ALPHABET
+    elif alphabet_choice == "191":
+        return ALPHABET191ASCII
+    else:
+        print("Opción de alfabeto inválida.")
+        return None
 
 # Se eliminan tildes mediante un diccionario
 def remove_tildes(text):

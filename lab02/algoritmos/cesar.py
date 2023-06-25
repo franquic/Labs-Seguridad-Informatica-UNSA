@@ -1,6 +1,4 @@
 from .preprocesar import clean_text, ALPHABET
-
-
 def cifrar_cesar(texto_plano, desplazamiento, alfabeto=ALPHABET):
     # se limpia el texto plano
     texto_plano = clean_text(texto_plano)
@@ -19,8 +17,6 @@ def cifrar_cesar(texto_plano, desplazamiento, alfabeto=ALPHABET):
             # se agrega el caracter al texto cifrado
             texto_cifrado += char
     return texto_cifrado
-
-
 def descifrar_cesar(texto_cifrado, desplazamiento, alfabeto=ALPHABET):
     # se limpia el texto cifrado
     texto_cifrado = clean_text(texto_cifrado)
