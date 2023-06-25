@@ -1,6 +1,6 @@
 *.txt
-!texto_claro.txt
-!clave.txt
+!lab02/files/texto_claro.txt
+!lab02/files/clave.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
